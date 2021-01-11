@@ -12,7 +12,7 @@ class Application
         resp.status = 400
         resp.write "Item not found"
     else
-      resp.status = 400
+      resp.status = 404
       resp.write "Route not found"
     end
     resp.finish
