@@ -3,9 +3,9 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    if req.path == "/items"
-      #test = Item.new(name, price)
-      if @@items.include?(item)
+    if req.path.match(/item/)
+      search_term = req.params["item"]
+      if @@items.include?(search_term)
         items.each do |n, price|
           return "#{price}"
         end
