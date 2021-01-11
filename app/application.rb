@@ -7,7 +7,7 @@ class Application
       search_term = req.params["item"]
       if @@items.include?(search_term)
         @@items.each do |price|
-          return "#{price}"
+          resp.write "#{price}"
         end
       else
         resp.status = 400
