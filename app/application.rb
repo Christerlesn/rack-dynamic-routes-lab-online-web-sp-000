@@ -4,7 +4,7 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path == "/items"
-      if !@@items.include?(item)
+      if @@items.include?(item)
         items.each do |n, price|
           return "#{price}"
         end
